@@ -7,4 +7,7 @@ public interface DomainObjectFactory {
     public Fixture createFixture (Integer fixtureId, Season season, Team homeTeam, Team awayTeam);
     public SeasonDivision createSeasonDivision (Season season, Division division);
     public SeasonDivisionTeam createSeasonDivisionTeam (SeasonDivision seasonDivision, Team team);
+    
+    public SeasonDivisionId createSeasonDivisionId (Season season, Division division);
+    public SeasonDivisionId createSeasonDivisionTeamId (SeasonDivision seasonDivision, Team team);
 }

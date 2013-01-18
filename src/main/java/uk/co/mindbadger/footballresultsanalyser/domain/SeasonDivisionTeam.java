@@ -1,6 +1,8 @@
 package uk.co.mindbadger.footballresultsanalyser.domain;
 
-public interface SeasonDivisionTeam {
+import java.io.Serializable;
+
+public interface SeasonDivisionTeam extends Serializable {
     public SeasonDivisionTeamId getPrimaryKey();
     public void setPrimaryKey(SeasonDivisionTeamId primaryKey);
     

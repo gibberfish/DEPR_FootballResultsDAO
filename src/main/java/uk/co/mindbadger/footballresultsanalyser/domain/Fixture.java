@@ -1,8 +1,9 @@
 package uk.co.mindbadger.footballresultsanalyser.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public interface Fixture {
+public interface Fixture extends Serializable {
     public Integer getFixtureId();
     public void setFixtureId(Integer fixtureId);
     

@@ -1,8 +1,9 @@
 package uk.co.mindbadger.footballresultsanalyser.domain;
 
+import java.io.Serializable;
 import java.util.Set;
 
-public interface Season {
+public interface Season extends Serializable {
     public Integer getSeasonNumber ();
     public void setSeasonNumber (Integer seasonNumber);
     
