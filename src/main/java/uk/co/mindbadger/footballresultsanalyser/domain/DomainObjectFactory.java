@@ -9,5 +9,5 @@ public interface DomainObjectFactory {
     public SeasonDivisionTeam createSeasonDivisionTeam (SeasonDivision seasonDivision, Team team);
     
     public SeasonDivisionId createSeasonDivisionId (Season season, Division division);
-    public SeasonDivisionId createSeasonDivisionTeamId (SeasonDivision seasonDivision, Team team);
+    public SeasonDivisionTeamId createSeasonDivisionTeamId (SeasonDivision seasonDivision, Team team);
 }
