@@ -18,10 +18,10 @@ public interface FootballResultsAnalyserDAO {
     public Season addSeason (Integer seasonNum);
     
     public Map<Integer, Division> getAllDivisions ();
-    public Division addDivision (Integer divisionId, String divisionName);
+    public Division addDivision (String divisionName);
     
     public Map<Integer, Team> getAllTeams ();
-    public Team addTeam (Integer teamId, String teamName);
+    public Team addTeam (String teamName);
     
     public Fixture addFixture (Integer fixtureId, Season season, Calendar fixtureDate, Division division, Team homeTeam, Team awayTeam, Integer homeGoals, Integer awayGoals);
     
