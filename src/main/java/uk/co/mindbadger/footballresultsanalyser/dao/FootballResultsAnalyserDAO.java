@@ -1,6 +1,8 @@
 package uk.co.mindbadger.footballresultsanalyser.dao;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import uk.co.mindbadger.footballresultsanalyser.domain.Division;
@@ -12,10 +14,16 @@ import uk.co.mindbadger.footballresultsanalyser.domain.Team;
 
 public interface FootballResultsAnalyserDAO {
     public List<Season> getSeasons ();
+    public Season getSeason (Integer seasonNum);
+    public Season addSeason (Integer seasonNum);
     
-    public List<Division> getAllDivisions ();
+    public Map<Integer, Division> getAllDivisions ();
+    public Division addDivision (Integer divisionId, String divisionName);
     
-    public List<Team> getAllTeams ();
+    public Map<Integer, Team> getAllTeams ();
+    public Team addTeam (Integer teamId, String teamName);
+    
+    public Fixture addFixture (Integer fixtureId, Season season, Calendar fixtureDate, Division division, Team homeTeam, Team awayTeam, Integer homeGoals, Integer awayGoals);
     
     public Set<SeasonDivision> getDivisionsForSeason (int seasonNumber);
 
@@ -24,6 +32,5 @@ public interface FootballResultsAnalyserDAO {
     public List<Fixture> getFixturesForTeamInDivisionInSeason(int seasonNumber, int divisionId, int teamId);
     
     public void startSession ();
-    
     public void closeSession ();
 }
