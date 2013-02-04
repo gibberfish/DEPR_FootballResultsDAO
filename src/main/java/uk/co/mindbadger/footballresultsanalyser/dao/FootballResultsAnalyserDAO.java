@@ -31,6 +31,8 @@ public interface FootballResultsAnalyserDAO {
 
     public List<Fixture> getFixturesForTeamInDivisionInSeason(int seasonNumber, int divisionId, int teamId);
     
+    public List<Fixture> getUnplayedFixturesBeforeToday();
+    
     public void startSession ();
     public void closeSession ();
 }
