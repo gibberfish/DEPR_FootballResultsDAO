@@ -33,6 +33,8 @@ public interface FootballResultsAnalyserDAO {
     
     public List<Fixture> getUnplayedFixturesBeforeToday();
     
+    public List<Fixture> getFixturesWithNoFixtureDate ();
+    
     public void startSession ();
     public void closeSession ();
 }
