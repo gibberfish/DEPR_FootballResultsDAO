@@ -12,28 +12,28 @@ import uk.co.mindbadger.footballresultsanalyser.domain.SeasonDivision;
 import uk.co.mindbadger.footballresultsanalyser.domain.SeasonDivisionTeam;
 import uk.co.mindbadger.footballresultsanalyser.domain.Team;
 
-public interface FootballResultsAnalyserDAO {
-    public List<Season> getSeasons ();
-    public Season getSeason (Integer seasonNum);
-    public Season addSeason (Integer seasonNum);
+public interface FootballResultsAnalyserDAO<K> {
+    public List<Season<K>> getSeasons ();
+    public Season<K> getSeason (Integer seasonNum);
+    public Season<K> addSeason (Integer seasonNum);
     
-    public Map<Integer, Division> getAllDivisions ();
-    public Division addDivision (String divisionName);
+    public Map<K, Division<K>> getAllDivisions ();
+    public Division<K> addDivision (String divisionName);
     
-    public Map<Integer, Team> getAllTeams ();
-    public Team addTeam (String teamName);
+    public Map<K, Team<K>> getAllTeams ();
+    public Team<K> addTeam (String teamName);
     
-    public Fixture addFixture (Season season, Calendar fixtureDate, Division division, Team homeTeam, Team awayTeam, Integer homeGoals, Integer awayGoals);
+    public Fixture<K> addFixture (Season<K> season, Calendar fixtureDate, Division<K> division, Team<K> homeTeam, Team<K> awayTeam, Integer homeGoals, Integer awayGoals);
     
-    public Set<SeasonDivision> getDivisionsForSeason (int seasonNumber);
+    public Set<SeasonDivision<K>> getDivisionsForSeason (int seasonNumber);
 
-    public Set<SeasonDivisionTeam> getTeamsForDivisionInSeason(int seasonNumber, int divisionId);
+    public Set<SeasonDivisionTeam<K>> getTeamsForDivisionInSeason(int seasonNumber, int divisionId);
 
-    public List<Fixture> getFixturesForTeamInDivisionInSeason(int seasonNumber, int divisionId, int teamId);
+    public List<Fixture<K>> getFixturesForTeamInDivisionInSeason(int seasonNumber, int divisionId, int teamId);
     
-    public List<Fixture> getUnplayedFixturesBeforeToday();
+    public List<Fixture<K>> getUnplayedFixturesBeforeToday();
     
-    public List<Fixture> getFixturesWithNoFixtureDate ();
+    public List<Fixture<K>> getFixturesWithNoFixtureDate ();
     
     public void startSession ();
     public void closeSession ();

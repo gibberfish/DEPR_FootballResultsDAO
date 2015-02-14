@@ -1,8 +1,11 @@
 package uk.co.mindbadger.footballresultsanalyser.domain;
 
-public interface Team {
-    public Integer getTeamId();
-    public void setTeamId(Integer teamId);
+import java.io.Serializable;
+
+public interface Team<K> extends Serializable {
+    public K getTeamId();
+    public void setTeamId(K teamId);
+    public String getTeamIdAsString();
     
     public String getTeamName();
     public void setTeamName(String teamName);

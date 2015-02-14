@@ -3,24 +3,24 @@ package uk.co.mindbadger.footballresultsanalyser.domain;
 import java.io.Serializable;
 import java.util.Calendar;
 
-public interface Fixture extends Serializable {
-    public Integer getFixtureId();
-    public void setFixtureId(Integer fixtureId);
+public interface Fixture<K> extends Serializable {
+    public K getFixtureId();
+    public void setFixtureId(K fixtureId);
     
-    public Season getSeason();
-    public void setSeason(Season season);
+    public Season<K> getSeason();
+    public void setSeason(Season<K> season);
     
-    public Team getHomeTeam();
-    public void setHomeTeam(Team homeTeam);
+    public Team<K> getHomeTeam();
+    public void setHomeTeam(Team<K> homeTeam);
     
-    public Team getAwayTeam();
-    public void setAwayTeam(Team awayTeam);
+    public Team<K> getAwayTeam();
+    public void setAwayTeam(Team<K> awayTeam);
     
     public Calendar getFixtureDate();
     public void setFixtureDate(Calendar fixtureDate);
     
-    public Division getDivision();
-    public void setDivision(Division division);
+    public Division<K> getDivision();
+    public void setDivision(Division<K> division);
     
     public Integer getHomeGoals();
     public void setHomeGoals(Integer homeGoals);
