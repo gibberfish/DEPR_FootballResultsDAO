@@ -29,6 +29,7 @@ public interface FootballResultsAnalyserDAO<K> {
     public Team<String> getTeam(K teamId);
     
     // Fixture
+    public Fixture<K> getFixture (Season<K> season, Division<K> division, Team<K> homeTeam, Team<K> awayTeam);
     public Fixture<K> addFixture (Season<K> season, Calendar fixtureDate, Division<K> division, Team<K> homeTeam, Team<K> awayTeam, Integer homeGoals, Integer awayGoals);
     public List<Fixture<K>> getFixturesForTeamInDivisionInSeason(Season<K> season, Division<K> division, Team<K> team);
     public List<Fixture<K>> getUnplayedFixturesBeforeToday();
