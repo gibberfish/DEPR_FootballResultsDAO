@@ -34,8 +34,10 @@ public interface FootballResultsAnalyserDAO<K, L, M> {
     public List<Fixture<K>> getFixturesWithNoFixtureDate ();
 
     // Season Shape
+    public SeasonDivision<K, L> getSeasonDivision (Season<K> season, Division<K> division);
     public SeasonDivision<K, L> addSeasonDivision (Season<K> season, Division<K> division, int position);
-    public SeasonDivisionTeam<K, L, M> addSeasonDivisionTeam (Season<K> season, Division<K> division, Team<K> team);
+    public SeasonDivision<K, L> getSeasonDivision (L seasonDivisionId);
+    public SeasonDivisionTeam<K, L, M> addSeasonDivisionTeam (SeasonDivision<K, L> seasonDivision, Team<K> team);
     //public Set<SeasonDivision<K>> getDivisionsForSeason (int seasonNumber);
     //public Set<SeasonDivisionTeam<K>> getTeamsForDivisionInSeason(int seasonNumber, int divisionId);
 
