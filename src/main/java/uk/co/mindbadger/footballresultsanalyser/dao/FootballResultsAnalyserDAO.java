@@ -3,6 +3,8 @@ package uk.co.mindbadger.footballresultsanalyser.dao;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import uk.co.mindbadger.footballresultsanalyser.domain.Division;
 import uk.co.mindbadger.footballresultsanalyser.domain.Fixture;
 import uk.co.mindbadger.footballresultsanalyser.domain.Season;
@@ -32,14 +34,15 @@ public interface FootballResultsAnalyserDAO<K, L, M> {
     public List<Fixture<K>> getFixturesForTeamInDivisionInSeason(Season<K> season, Division<K> division, Team<K> team);
     public List<Fixture<K>> getUnplayedFixturesBeforeToday();
     public List<Fixture<K>> getFixturesWithNoFixtureDate ();
+    public List<Fixture<K>> getFixtures ();
 
     // Season Shape
     public SeasonDivision<K, L> getSeasonDivision (Season<K> season, Division<K> division);
     public SeasonDivision<K, L> addSeasonDivision (Season<K> season, Division<K> division, int position);
     public SeasonDivision<K, L> getSeasonDivision (L seasonDivisionId);
     public SeasonDivisionTeam<K, L, M> addSeasonDivisionTeam (SeasonDivision<K, L> seasonDivision, Team<K> team);
-    //public Set<SeasonDivision<K>> getDivisionsForSeason (int seasonNumber);
-    //public Set<SeasonDivisionTeam<K>> getTeamsForDivisionInSeason(int seasonNumber, int divisionId);
+    public Set<SeasonDivision<K,L>> getDivisionsForSeason (Season<K> season);
+    public Set<SeasonDivisionTeam<K,L,M>> getTeamsForDivisionInSeason(SeasonDivision<K,L> seasonDivision);
 
     // Housekeeping
     public void startSession ();
