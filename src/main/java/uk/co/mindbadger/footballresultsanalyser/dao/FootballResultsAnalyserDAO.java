@@ -35,6 +35,7 @@ public interface FootballResultsAnalyserDAO<K, L, M> {
     public List<Fixture<K>> getUnplayedFixturesBeforeToday();
     public List<Fixture<K>> getFixturesWithNoFixtureDate ();
     public List<Fixture<K>> getFixtures ();
+    public List<Fixture<K>> getFixturesForDivisionInSeason (SeasonDivision<K,L> seasonDivision);
 
     // Season Shape
     public SeasonDivision<K, L> getSeasonDivision (Season<K> season, Division<K> division);
