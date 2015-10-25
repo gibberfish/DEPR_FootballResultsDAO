@@ -2,7 +2,7 @@ package uk.co.mindbadger.footballresultsanalyser.domain;
 
 import java.io.Serializable;
 
-public interface SeasonDivision<K, L> extends Serializable {
+public interface SeasonDivision<K, L> extends Serializable, Comparable<SeasonDivision<K, L>> {
     public L getId();
     public void setId(L id);
     
