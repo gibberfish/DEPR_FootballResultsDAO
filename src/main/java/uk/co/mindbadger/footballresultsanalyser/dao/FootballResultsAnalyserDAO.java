@@ -12,38 +12,38 @@ import uk.co.mindbadger.footballresultsanalyser.domain.SeasonDivision;
 import uk.co.mindbadger.footballresultsanalyser.domain.SeasonDivisionTeam;
 import uk.co.mindbadger.footballresultsanalyser.domain.Team;
 
-public interface FootballResultsAnalyserDAO<K, L, M> {
+public interface FootballResultsAnalyserDAO {
 	// Season
-    public List<Season<K>> getSeasons ();
-    public Season<K> getSeason (Integer seasonNum);
-    public Season<K> addSeason (Integer seasonNum);
+    public List<Season> getSeasons ();
+    public Season getSeason (Integer seasonNum);
+    public Season addSeason (Integer seasonNum);
     
     // Division
-    public Map<K, Division<K>> getAllDivisions ();
-    public Division<K> addDivision (String divisionName);
-    public Division<String> getDivision(K divId);
+    public Map<String, Division> getAllDivisions ();
+    public Division addDivision (String divisionName);
+    public Division getDivision(String divId);
     
     // Teams
-    public Map<K, Team<K>> getAllTeams ();
-    public Team<K> addTeam (String teamName);
-    public Team<String> getTeam(K teamId);
+    public Map<String, Team> getAllTeams ();
+    public Team addTeam (String teamName);
+    public Team getTeam(String teamId);
     
     // Fixture
-    public Fixture<K> getFixture (Season<K> season, Division<K> division, Team<K> homeTeam, Team<K> awayTeam);
-    public Fixture<K> addFixture (Season<K> season, Calendar fixtureDate, Division<K> division, Team<K> homeTeam, Team<K> awayTeam, Integer homeGoals, Integer awayGoals);
-    public List<Fixture<K>> getFixturesForTeamInDivisionInSeason(Season<K> season, Division<K> division, Team<K> team);
-    public List<Fixture<K>> getUnplayedFixturesBeforeToday();
-    public List<Fixture<K>> getFixturesWithNoFixtureDate ();
-    public List<Fixture<K>> getFixtures ();
-    public List<Fixture<K>> getFixturesForDivisionInSeason (SeasonDivision<K,L> seasonDivision);
+    public Fixture getFixture (Season season, Division division, Team homeTeam, Team awayTeam);
+    public Fixture addFixture (Season season, Calendar fixtureDate, Division division, Team homeTeam, Team awayTeam, Integer homeGoals, Integer awayGoals);
+    public List<Fixture> getFixturesForTeamInDivisionInSeason(Season season, Division division, Team team);
+    public List<Fixture> getUnplayedFixturesBeforeToday();
+    public List<Fixture> getFixturesWithNoFixtureDate ();
+    public List<Fixture> getFixtures ();
+    public List<Fixture> getFixturesForDivisionInSeason (SeasonDivision seasonDivision);
 
     // Season Shape
-    public SeasonDivision<K, L> getSeasonDivision (Season<K> season, Division<K> division);
-    public SeasonDivision<K, L> addSeasonDivision (Season<K> season, Division<K> division, int position);
-    public SeasonDivision<K, L> getSeasonDivision (L seasonDivisionId);
-    public SeasonDivisionTeam<K, L, M> addSeasonDivisionTeam (SeasonDivision<K, L> seasonDivision, Team<K> team);
-    public Set<SeasonDivision<K,L>> getDivisionsForSeason (Season<K> season);
-    public Set<SeasonDivisionTeam<K,L,M>> getTeamsForDivisionInSeason(SeasonDivision<K,L> seasonDivision);
+    public SeasonDivision getSeasonDivision (Season season, Division division);
+    public SeasonDivision addSeasonDivision (Season season, Division division, int position);
+    public SeasonDivision getSeasonDivision (String seasonDivisionId);
+    public SeasonDivisionTeam addSeasonDivisionTeam (SeasonDivision seasonDivision, Team team);
+    public Set<SeasonDivision> getDivisionsForSeason (Season season);
+    public Set<SeasonDivisionTeam> getTeamsForDivisionInSeason(SeasonDivision seasonDivision);
 
     // Housekeeping
     public void startSession ();

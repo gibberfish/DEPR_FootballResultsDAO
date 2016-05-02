@@ -2,15 +2,15 @@ package uk.co.mindbadger.footballresultsanalyser.domain;
 
 import java.io.Serializable;
 
-public interface SeasonDivision<K, L> extends Serializable, Comparable<SeasonDivision<K, L>> {
-    public L getId();
-    public void setId(L id);
+public interface SeasonDivision extends Serializable, Comparable<SeasonDivision> {
+    public String getId();
+    public void setId(String id);
     
-    public Season<K> getSeason();
-    public void setSeason(Season<K> season);
+    public Season getSeason();
+    public void setSeason(Season season);
     
-    public Division<K> getDivision();
-    public void setDivision(Division<K> division);
+    public Division getDivision();
+    public void setDivision(Division division);
     
     public int getDivisionPosition();
     public void setDivisionPosition(int divisionPosition);    

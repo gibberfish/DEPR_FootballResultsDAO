@@ -2,10 +2,9 @@ package uk.co.mindbadger.footballresultsanalyser.domain;
 
 import java.io.Serializable;
 
-public interface Division<K> extends Serializable {
-    public K getDivisionId();
-    public void setDivisionId(K divisionId);
-    public String getDivisionIdAsString();
+public interface Division extends Serializable {
+    public String getDivisionId();
+    public void setDivisionId(String divisionId);
     
     public String getDivisionName();
     public void setDivisionName(String divisionName);    
