@@ -5,7 +5,6 @@ import java.io.Serializable;
 public interface Team extends Serializable {
     public String getTeamId();
     public void setTeamId(String teamId);
-    public String getTeamIdAsString();
     
     public String getTeamName();
     public void setTeamName(String teamName);

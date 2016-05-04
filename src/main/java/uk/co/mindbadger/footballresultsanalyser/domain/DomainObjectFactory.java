@@ -1,6 +1,6 @@
 package uk.co.mindbadger.footballresultsanalyser.domain;
 
-public interface DomainObjectFactory<K, L, M> {
+public interface DomainObjectFactory {
     public Season createSeason (Integer seasonNumber);
     public Division createDivision (String divisionName);
     public Team createTeam (String teamName);
