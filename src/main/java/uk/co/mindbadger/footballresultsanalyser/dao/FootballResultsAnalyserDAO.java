@@ -3,8 +3,6 @@ package uk.co.mindbadger.footballresultsanalyser.dao;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import uk.co.mindbadger.footballresultsanalyser.domain.Division;
 import uk.co.mindbadger.footballresultsanalyser.domain.Fixture;
 import uk.co.mindbadger.footballresultsanalyser.domain.Season;
@@ -40,8 +38,8 @@ public interface FootballResultsAnalyserDAO {
     // Season Shape
 	public SeasonDivision addSeasonDivision (Season season, Division division, int position);
 	public SeasonDivisionTeam addSeasonDivisionTeam (SeasonDivision seasonDivision, Team team);
-	public Set<SeasonDivision> getDivisionsForSeason (Season season);
-	public Set<SeasonDivisionTeam> getTeamsForDivisionInSeason(SeasonDivision seasonDivision);
+	public List<SeasonDivision> getDivisionsForSeason (Season season);
+	public List<SeasonDivisionTeam> getTeamsForDivisionInSeason(SeasonDivision seasonDivision);
 
     // Housekeeping
     public void startSession ();
