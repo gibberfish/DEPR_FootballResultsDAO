@@ -32,7 +32,7 @@ public interface FootballResultsAnalyserDAO {
 	public List<Fixture> getFixturesWithNoFixtureDate ();
 	public Fixture getFixture (String fixtureId);
     //public Fixture getFixture (Season season, Division division, Team homeTeam, Team awayTeam);
-    //public List<Fixture> getFixtures ();
+    public List<Fixture> getFixtures ();
     //public List<Fixture> getFixturesForDivisionInSeason (SeasonDivision seasonDivision);
     //public List<Fixture> getFixturesForTeamInDivisionInSeason(SeasonDivision seasonDivision, Team team);
 
