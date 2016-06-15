@@ -1,14 +1,15 @@
-package uk.co.mindbadger.footballresultsanalyser.dao;
+package mindbadger.footballresultsanalyser.dao;
 
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
-import uk.co.mindbadger.footballresultsanalyser.domain.Division;
-import uk.co.mindbadger.footballresultsanalyser.domain.Fixture;
-import uk.co.mindbadger.footballresultsanalyser.domain.Season;
-import uk.co.mindbadger.footballresultsanalyser.domain.SeasonDivision;
-import uk.co.mindbadger.footballresultsanalyser.domain.SeasonDivisionTeam;
-import uk.co.mindbadger.footballresultsanalyser.domain.Team;
+
+import mindbadger.footballresultsanalyser.domain.Division;
+import mindbadger.footballresultsanalyser.domain.Fixture;
+import mindbadger.footballresultsanalyser.domain.Season;
+import mindbadger.footballresultsanalyser.domain.SeasonDivision;
+import mindbadger.footballresultsanalyser.domain.SeasonDivisionTeam;
+import mindbadger.footballresultsanalyser.domain.Team;
 
 public interface FootballResultsAnalyserDAO {
 	// Season

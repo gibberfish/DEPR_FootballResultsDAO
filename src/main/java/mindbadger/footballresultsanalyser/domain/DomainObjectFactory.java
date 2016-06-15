@@ -1,4 +1,4 @@
-package uk.co.mindbadger.footballresultsanalyser.domain;
+package mindbadger.footballresultsanalyser.domain;
 
 public interface DomainObjectFactory {
     public Season createSeason (Integer seasonNumber);

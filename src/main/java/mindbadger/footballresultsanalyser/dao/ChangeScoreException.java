@@ -1,4 +1,4 @@
-package uk.co.mindbadger.footballresultsanalyser.dao;
+package mindbadger.footballresultsanalyser.dao;
 
 public class ChangeScoreException extends RuntimeException {
 
